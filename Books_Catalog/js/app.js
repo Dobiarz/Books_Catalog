@@ -15,7 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.booksList').appendChild(newTitle)
                 var newDiv = document.createElement('div');
                 document.querySelector('.booksList').appendChild(newDiv);
+                var newButton = document.createElement('button');
+                document.querySelector('.booksList').appendChild(newButton);
+                newButton.innerHTML = "Remove";
+                newButton.addEventListener('click', function () {
+                    $.ajax({
+                        url: "http://localhost:8282/books/" + element.id,
+                        type: "DELETE",
+                    }).done(function () {
+                        clearBooklist();
+                        getAllbooks();
+                    });
+                });
                 newTitle.innerHTML = element.title;
+
                 newTitle.addEventListener('click', function () {
                     $.ajax({
                         url: "http://localhost:8282/books/" + element.id,
@@ -29,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     };
+
+
+
 
     getAllbooks();
 
