@@ -1,2 +1,8 @@
-# Books_Catalog
-WAR_JEE_W_06_Rest_Server-master
+## Books_Catalog
+Front-end application for cataloging books. Created during workshops at the programming school.
+
+## Technologies
+Project is created with:
+* JavaScript, 
+* jQuery, 
+* Ajax
